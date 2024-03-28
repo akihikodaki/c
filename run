@@ -1,0 +1,3 @@
+#!/bin/sh
+v=-v"$(dirname ${BASH_SOURCE[0]})/root:/root"
+podman container exists c || podman run --name c --rm --security-opt=label=disable --privileged -d "$v" c
